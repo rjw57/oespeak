@@ -1,0 +1,282 @@
+// Spelling-to-phoneme rules for Anglo Saxon
+// This file is UTF8 encoded.
+
+// Special characters:
+// A  vowel:   a ā æ ǣ e ē i ī o ō u ū y ȳ
+
+// for 'c'
+.L01 a ā o ō u ū y ȳ
+.L02 e ē i ī
+
+// for 'g' and 'h'
+.L03 a ā o ō u ū
+.L04 e ē i ī
+.L05 a ā o ō u ū
+
+// 'voiced' sounds: vowels
+.L06 a ā æ ǣ e ē i ī o ō u ū y ȳ
+// 'voiced' sounds: consonants
+.L07 b d l w
+
+.replace
+        qu cw
+        z  ts
+        uu w
+        
+        // wynn rune
+        ƿ  w
+
+        // yogh rune
+        ȝ  g
+
+        // normalise ð and þ
+        ð  þ
+
+        // various vowel accents/markups
+        ae æ
+        æq ǣ
+        ǽ  ǣ
+
+        aq ā
+        á  ā
+
+        eq ē
+        é  ē
+
+        iq ī
+        í  ī
+
+        oq ō
+        ó  ō
+
+        uq ū
+        ú  ū
+
+        yq ȳ
+        ý  ȳ
+
+// Vowels
+
+.group a
+        a        a
+     _) a (@P1   a      // 'a-' prefix
+
+.group ā
+        ā        a:
+     _) ā (@P1   a:     // 'ā-' prefix
+
+.group æ
+        æ        &
+     _) æt (@P2  &t     // 'æt-' prefix
+ 
+.group ǣ
+        ǣ        &:
+     _) ǣ        _:&:
+
+.group e
+        e        e
+     _) e        _:e
+        e (_S1	 e2
+
+.group ē
+        ē        e:
+     _) ē        _:e:
+
+.group i
+        i        i
+     _) i        _:i
+        isc (_S3 iS	// '-isc' suffix
+
+.group ī
+        ī        i:
+     _) ī        _:i:
+
+.group o
+        o        o
+     _) o        _:o
+     _) on (@P2  _:on     // on- prefix
+
+.group ō
+        ō        o:
+     _) ō        _:o:
+
+.group u
+        u        u
+     _) u        _:u
+
+.group ū
+        ū        u:
+     _) ū        _:u:
+
+.group y
+        y        y
+     _) y        _:y
+
+.group ȳ
+        ȳ        y:
+     _) ȳ        _:y:
+
+// Diphthongs
+
+.group ea
+        ea       &a
+     _) ea       _:&a
+    _C) ea       '&a
+
+.group ē
+        ēa       ea
+     _) ēa       _:ea
+    _C) ēa       'ea
+
+.group eo
+        eo       eo
+     _) eo       _:eo
+    _C) eo       'eo
+
+.group ēo
+        ēo       e:o
+     _) ēo       _:e:o
+    _C) ēo       'e:o
+
+.group ie
+        ie       ie
+     _) ie       _:ie
+    _C) ie       'ie
+
+.group īe
+        īe       i:e
+     _) īe       _:i:e
+    _C) īe       'i:e
+
+.group io
+        io       io
+     _) io       _:io
+    _C) io       'io
+
+.group īo
+        īo       i:o
+     _) īo       _:i:o
+    _C) īo       'i:o
+
+// Consonants
+
+.group b
+        b        b
+     _) be (@P2  be     // 'be-' prefix
+
+.group c
+        c        k      // if in doubt, hard
+
+        c (C     k      // hard before consonants
+
+        c (L01   k      // hard before and, when final, after L01
+   L01) c (_     k
+
+     æ) c (_     k      // hard finally after short æ or e
+     e) c (_     k
+
+        c (L02   tS     // soft before long/short i, e
+   L02) c (L02   tS     // soft between long/short i, e
+
+     i) c (_     tS     // soft finally after i/ī
+     ī) c (_     tS
+
+     ē) c (_     tS     // soft finally after ē, ǣ
+
+     ǣ) c (+     tS     // soft after ǣ
+
+// explicitly noted soft c
+.group ċ
+        ċ        tS
+
+.group cg
+        cg (+    dZ
+
+.group d
+        d        d
+        d (_N    d_:
+
+.group f
+     _) f        f      // initial or final, voiceless 'f'
+        f (_N    f
+        f        v      // voiced when medial
+     _) for (@P3 for    // 'for-' prefix
+
+.group g
+        g        g      // default, hard
+        g (_     g_:
+
+     _) g (C     g      // hard initially before consonants
+        g (L03   g      // hard before a, o and u
+
+     _) g (L04   _:j    // soft initially before long/short e, i
+   L04) g        j      // soft after long/short e, i
+     e) g (_     j      // soft finally after e, i or æ
+     i) g (_     j
+     æ) g (_     j
+
+   L05) g        x
+   L05) g (L05   x
+
+     _) ge (C@P2 je     // "ge-" is a standard prefix
+
+// explcit soft g
+.group ġ
+        ġ        j
+
+.group h
+        h        xh     // 'ch' as in ModE 'loch'
+     _) h        h      // initially, h as in ModE. house
+   L04) h        C      // Germanic 'ch' after e, i
+
+.group k
+        k        k
+
+.group l
+        l        l
+
+.group m
+        m        m
+
+.group n
+        n        n
+
+.group ng
+        ng       N
+
+.group p
+        p        p
+
+.group r
+        r        R      // default 'R'
+        r (C     r/     // 'American' style before consonant or final
+        r (_     r/   
+
+.group s
+        s        s
+
+   L06) s (L06   z      // between vowels
+
+   L07) s        z      // next to voiced consonants
+        s (L07   z
+
+.group sc
+        sc       S
+
+.group t
+        t        t
+
+.group þ
+        þ        D      // voiced when initial or medial
+        þ (_     T      // voiceless when final
+
+.group w
+        w        w
+        w (_     w_
+
+.group x
+        x        ks
+
+.group
+        . (.     _:
+    \.) .

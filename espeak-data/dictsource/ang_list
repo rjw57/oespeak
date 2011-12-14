@@ -1,0 +1,170 @@
+// Exceptions dictionary for: Anglo Saxon
+// This file in UTF8 encoded
+
+// Latin letter names
+a e:
+b bi:
+c si:
+d di:
+e i:e
+f ef
+g dZi:e
+h e:tS
+i i:
+j dZe:
+k ke:
+l el
+m em
+n en
+o o
+p pe
+q cu
+r aR
+s es
+t ti
+u u
+v ve:
+w wynn
+x exs
+y y:
+z zed
+
+// numeric
+_0 nūl          $text   // based on German
+_1 ān           $text
+_2 twā          $text
+_3 þrīe         $text
+_4 fēower       $text
+_5 fīf          $text
+_6 siex         $text
+_7 seofon       $text
+_8 eahta        $text
+_9 nigon        $text
+
+// ... the rest require modifying tr_languages.cpp it would appear
+// _10 tīen        $text
+// _11 endleofan   $text
+// _12 twelf       $text
+
+// pronouns
+
+// first person
+ic      $u      // nominative
+wit     $u
+wē      $u
+mē      $u      // accusative/dative
+mec     $u
+unc     $u
+ūs      $u
+mīn     $u      // genitive
+uncer   $u
+ūre     $u
+
+// second person
+þū      $u      // nominative
+git     $u
+gē      $u
+þē      $u      // accusative/dative
+inc     $u
+ēow     $u
+þīn     $u      // genitive
+incer   $u
+ēower   $u
+
+// third person
+hē      $u      // nominative sg.
+hit     $u
+hēo     $u
+hine    $u      // accusative sg.
+hīe     $u
+his     $u      // genitive sg.
+hire    $u
+him     $u      // dative sg.
+
+hira    $u      // genitive pl. (other pl. are the same as above)
+
+// demonstative pronoun
+se      $u      // nominative sg.
+þæt     $u
+sēo     $u
+þes     $u
+þis     $u
+þēos    $u
+þone    $u      // accusative sg.
+þā      $u
+þisne   $u
+þis     $u
+þās     $u
+þæs     $u      // genitive sg.
+þǣre    $u
+þises   $u
+þisses  $u
+þisse   $u
+þisre   $u
+þām     $u      // dative sg.
+þǣm     $u
+þisum   $u
+þissum  $u
+þȳ      $u      // instumental sg.
+þon     $u
+þȳs     $u
+
+þāra    $u      // genitive pl. (other pl. are the same as above)
+þissa   $u
+þisra   $u
+
+// interrogative pronouns
+hwā     $u+
+hwæt    $u+
+hwone   $u+
+hwene   $u+
+hwæs    $u+
+hwām    $u+
+hwǣm    $u+
+hwȳ     $u+
+hwon    $u+
+
+// various forms of 'be'
+wesan   $u
+wesende $u
+eom     $u
+eart    $u
+is      $u
+sind    $u
+sindon  $u
+sīe     $u
+sīen    $u
+wes     $u
+
+bēon    $u
+bēonne  $u
+bēonde  $u
+bēo     $u
+bist    $u
+bið     $u
+bēoð    $u
+
+wæs     $u
+wǣre    $u
+wǣron   $u
+wǣre    $u
+wǣren   $u
+
+// prepositions
+to      $u
+of      $u
+for     $u
+þe      $u
+ofer    $u
+mid     $u
+fram	$u
+intō	$u
+in	$u
+inne	$u
+ac	$u
+swā	$u
+
+// conjunctions
+and     $u $pause
+ond     $u $pause
+but     $u $pause
