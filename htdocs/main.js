@@ -29,11 +29,9 @@ $(document).ready(function() {
     $('button').button('disable');
     $('button').button('option', { label: 'Ðreodiende' });
 
-    audio.src = speak_root + '?' + $.param({ text: input_text });
-    audio.play();
-
     $(audio).bind('loadeddata', function() {
       $('button').button('option', { label: 'Cweðende' });
+      audio.play()
     });
 
     $(audio).bind('ended', function() {
@@ -41,8 +39,10 @@ $(document).ready(function() {
       $('button').button('option', { label: 'Cweðan' });
     });
 
+    audio.setAttribute('src', speak_root + '?' + $.param({ text: input_text }));
+    audio.load();
+
     return false;
   });
-
-  console.log(audio);
 });
+
