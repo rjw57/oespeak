@@ -1,0 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond&subset=latin,latin-ext);
+html { font-family: 'EB Garamond', serif; }
+#content { margin: 0 auto; width: 100ex; }
+#text { width: 100%; border: 1px solid black; }
+#play { }

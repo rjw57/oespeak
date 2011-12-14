@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Old English speech synthesiser</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
+  </head>
+    <link rel="stylesheet" href="main.css" type="text/css" media="all" />
+  </head>
+  <body>
+    <audio id="audio">
+      <strong>You need a browser which supports the HTML5 audio tag for this :(.</strong>
+      </audio>
+    <div id="content">
+    <h1>Ælde Ænglisc Cweð</h1>
+    <p>
+      This website lets you hear what Old English sounds like when read aloud.
+      Or, rather, what it sounds like when read aloud by computer. It's a work
+      in progress: the quality should improve over time as I learn
+      more about Old English orthography and pronunciation. Simply enter the text to
+      be spoken and click the 'Cweðan' button.
+    </p>
+    <form accept-charset="utf-8">
+      <textarea class="ui-widget" id="text" rows="7" cols="50">Wes þū hāl!
+
+Byrhtnōð maþelode, .. bord hafenode,
+wand wācne æsc, .. wordum mǣlde,
+yrre and ānrǣd .. āgeaf him andsware:
+'Gehȳrst þū, sǣlida, .. hwæt þis folc segeð?'
+</textarea>
+      <button type="submit" id="play">Cweðan</button>
+    </form>
+    <h2>Tips and tricks</h2>
+    <p>
+      You can enter text either as an Old English scholar would (complete with
+      æ's, Þ's and proper macrons such as ē) or you can use a normalised form
+      suitable for people without their keyboards set up for Anglo-Saxon. Use
+      'ae' for an æsc, 'th' for a þorn and add a 'q' to the end of a vowel in
+      place of a macron, e.g. 'eq' for 'ē' and 'aeq' for 'ǣ'.
+    </p>
+    <h2>Technical note</h2>
+    <p>
+      This site requires a modern browser with support for the &lt;audio&gt;
+      tag. The backend is powered by <a
+        href="http://www.python.org/">Python</a> and <a
+        href="http://espeak.sourceforge.net/">espeak</a> with a custom
+      Anglo-Saxon rule-set which I'm developing.
+    </p>
+  </div>
+  </body>
+</html>
